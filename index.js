@@ -34,4 +34,15 @@
 // console.log(maximumNumber([75, 10,20,30,65]))
 
 
+// Reverse a string
+
+const ReverseString = (str) => {
+    if(!str) {
+        return ""
+    }
+    return str.split("").reverse().join("")
+}
+
+console.log(ReverseString("name"))
+
 
