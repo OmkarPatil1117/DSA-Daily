@@ -36,13 +36,65 @@
 
 // Reverse a string
 
-const ReverseString = (str) => {
-    if(!str) {
-        return ""
+// const ReverseString = (str) => {
+//     if(!str) {
+//         return ""
+//     }
+//     return str.split("").reverse().join("")
+// }
+
+// console.log(ReverseString("name"))
+
+
+// Longest Common Prefix
+
+const strs = ["flower", "flow", "flight"];
+
+function longestCommonPrefix(strs) {
+    if (strs.length === 0) return ""; 
+    if (strs.length === 1) return strs[0]; 
+    
+    // Sort the array to bring similar strings closer
+    strs.sort();
+    
+    // Take the first and last strings after sorting
+    let first = strs[0];
+    let last = strs[strs.length - 1];
+    
+    let i = 0;
+    // Compare characters of the first and last strings
+    while (i < first.length && i < last.length && first[i] === last[i]) {
+        i++;
     }
-    return str.split("").reverse().join("")
+    
+    // Return the common prefix found
+    return first.substring(0, i);
 }
 
-console.log(ReverseString("name"))
+console.log(longestCommonPrefix(["flower", "flow", "flight"])); 
+console.log(longestCommonPrefix(["dog", "racecar", "car"]));   
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
